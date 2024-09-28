@@ -10,13 +10,15 @@ import FirebaseCore
 import FirebaseFirestore
 
 struct Thread: Identifiable, Codable {
-    @DocumentID var threadID: String?
+    @DocumentID var threadId: String?
     let ownerUid: String
     let caption: String
     let timestamp: Timestamp
     var likes: Int
+    
     var id: String {
-        return threadID ?? UUID().uuidString }
+        return threadId ?? NSUUID().uuidString
+    }
     
     var user: User?
 }
