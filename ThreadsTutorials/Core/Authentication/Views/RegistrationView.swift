@@ -24,15 +24,17 @@ struct RegistrationView: View {
             VStack {
                 
                 TextField("Enter your email", text: $viewModel.email)
+                    .autocapitalization(.none)
                     .modifier(ThreadsTextFieldsModifierTests())
                 
                 SecureField("Enter your password", text: $viewModel.password)
                     .modifier(ThreadsTextFieldsModifierTests())
                 
-                TextField("Enter your fullname", text: $viewModel.fullname)
+                TextField("Enter your fullname", text: $viewModel.fullName)
                     .modifier(ThreadsTextFieldsModifierTests())
                 
-                TextField("Enter your username", text: $viewModel.username)
+                TextField("Enter your username", text: $viewModel.userName)
+                    .autocapitalization(.none)
                     .modifier(ThreadsTextFieldsModifierTests())
             }
             
